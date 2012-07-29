@@ -5,13 +5,17 @@ module Validus
       @errors = Hash.new { |hash, key| hash[key] = [] }
     end
 
-    # Add an error +msg+ for an +attribute+.
-    def add(attribute, msg)
-      @errors[attribute] << msg
+    # Add an error +message+ for an +attribute+.
+    def add(attribute, message)
+      @errors[attribute] << message
     end
 
     def empty?
       @errors.empty?
+    end
+
+    def clear
+      @errors.clear
     end
 
     # Returns an Enumerator consisting of all errors associated

@@ -12,6 +12,14 @@ module Validus
       refute(@errors.empty?, "did not expect errors to be empty")
     end
 
+    test "can clear errors" do
+      @errors.add(:name, "cannot be empty")
+      refute(@errors.empty?, "did not expect errors to be empty")
+
+      @errors.clear
+      assert(@errors.empty?, "expected errors to be empty")
+    end
+
     test "can get errors for a particular attribute" do
       @errors.add(:name, "cannot be empty")
       assert_equal(['cannot be empty'], @errors.for(:name).to_a)
