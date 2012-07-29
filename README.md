@@ -52,6 +52,8 @@ Example:
     person.valid?        # => true
     person.errors.empty? # => true
 
+See [documentation](http://www.rubydoc.info/github/bnadlerjr/validus/frames) for more details.
+
 ## Contributing
 
 1. Fork it

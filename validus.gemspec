@@ -2,11 +2,13 @@
 require File.expand_path('../lib/validus/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Bob Nadler"]
+  gem.authors       = ["Bob Nadler, Jr."]
   gem.email         = ["bnadlerjr@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Valdations for Plain Old Ruby Objects.}
+  gem.summary       = %q{Valdations for Plain Old Ruby Objects.}
+  gem.homepage      = "https://github.com/bnadlerjr/validus"
+  gem.has_rdoc      = true
+  gem.license       = 'MIT'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
