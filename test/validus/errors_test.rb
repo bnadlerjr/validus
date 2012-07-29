@@ -14,7 +14,7 @@ module Validus
 
     test "can get errors for a particular attribute" do
       @errors.add(:name, "cannot be empty")
-      assert_equal(['cannot be empty'], @errors.for(:name))
+      assert_equal(['cannot be empty'], @errors.for(:name).to_a)
     end
 
     test "add multiple errors for a single attribute" do
@@ -22,7 +22,7 @@ module Validus
       @errors.add(:name, "must be 10 characters")
 
       expected = ['cannot be empty', 'must be 10 characters']
-      assert_equal(expected, @errors.for(:name))
+      assert_equal(expected, @errors.for(:name).to_a)
     end
 
     test "can get full error messages" do
@@ -36,7 +36,7 @@ module Validus
         'age must be greater than zero'
       ]
 
-      assert_equal(expected, @errors.full_messages)
+      assert_equal(expected, @errors.full_messages.to_a)
     end
   end
 end
