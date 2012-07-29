@@ -18,39 +18,39 @@ Or install it yourself as:
 
 ## Usage
 
-Include this module in a target class and override the +validate+ method. Use
-+#valid?+ to perform the validation.
+Include this module in a target class and override the `validate` method. Use
+`valid?` to perform the validation.
 
 Example:
 
-  require "validus"
+    require "validus"
 
-  class Person
-    include Validus
+    class Person
+      include Validus
 
-    attr_accessor :name, :age
+      attr_accessor :name, :age
 
-    def initialize
-      @name = ''
-      @age  = 0
+      def initialize
+        @name = ''
+        @age  = 0
+      end
+
+      def validate
+        errors.add(:name, 'cannot be blank') if name == ''
+        errors.add(:age, 'must be greater than 0') if age <= 0
+      end
     end
 
-    def validate
-      errors.add(:name, 'cannot be blank') if name == ''
-      errors.add(:age, 'must be greater than 0') if age <= 0
-    end
-  end
+    person = Person.new
+    person.valid?                    # => false
+    person.errors.for(:name).to_a    # => ['cannot be blank']
+    person.errors.full_messages.to_a # => ['name cannot be blank', 'age must be greater than 0']
 
-  person = Person.new
-  person.valid?                    # => false
-  person.errors.for(:name).to_a    # => ['cannot be blank']
-  person.errors.full_messages.to_a # => ['name cannot be blank', 'age must be greater than 0']
+    person.name = 'John'
+    person.age  = 20
 
-  person.name = 'John'
-  person.age  = 20
-
-  person.valid?        # => true
-  person.errors.empty? # => true
+    person.valid?        # => true
+    person.errors.empty? # => true
 
 ## Contributing
 
