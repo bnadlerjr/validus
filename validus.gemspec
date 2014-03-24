@@ -21,6 +21,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "flay",               "~> 1.4.3"
   gem.add_development_dependency "flog",               "~> 2.5.3"
   gem.add_development_dependency "minitest-reporters", "~> 0.9.0"
-  gem.add_development_dependency "rake",               "~> 0.9.2.2"
+  gem.add_development_dependency "rake",               "~> 10.1.1"
   gem.add_development_dependency "rdoc",               "~> 3.12"
 end
