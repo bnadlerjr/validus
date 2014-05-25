@@ -1,4 +1,5 @@
 # Validus
+[![Dependency Status](https://gemnasium.com/bnadlerjr/validus.svg)](https://gemnasium.com/bnadlerjr/validus)
 
 Add validation support to Plain Old Ruby Objects.
 
