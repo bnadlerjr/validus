@@ -1,4 +1,5 @@
 # Validus
+[![Gem Version](https://badge.fury.io/rb/validus.svg)](http://badge.fury.io/rb/validus)
 [![Dependency Status](https://gemnasium.com/bnadlerjr/validus.svg)](https://gemnasium.com/bnadlerjr/validus)
 [![Code Climate](https://codeclimate.com/github/bnadlerjr/validus.png)](https://codeclimate.com/github/bnadlerjr/validus)
 
