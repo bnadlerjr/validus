@@ -3,7 +3,7 @@ require "bundler/gem_tasks"
 require "rake/testtask"
 require "rdoc/task"
 require "flay_task"
-require "flog"
+require "flog_task"
 
 DEFAULT_TASKS    = %w[test flog flay]
 MAIN_RDOC        = 'README.md'
@@ -35,22 +35,6 @@ FlayTask.new do |t|
   t.dirs = %w[lib]
 end
 
-task :flog do
-  flog = Flog.new
-  flog.flog ['lib']
-  threshold = 50
-
-  bad_methods = flog.totals.select do |name, score|
-    score > threshold
-  end
-
-  bad_methods.sort do |a, b|
-    a[1] <=> b[1]
-  end.each do |name, score|
-    puts "%8.1f: %s" % [score, name]
-  end
-
-  unless bad_methods.empty?
-    raise "#{bad_methods.size} methods have a flog complexity > #{threshold}"
-  end
+FlogTask.new do |t|
+  t.dirs = %w[lib]
 end
