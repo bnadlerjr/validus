@@ -67,7 +67,7 @@ See [documentation](http://www.rubydoc.info/github/bnadlerjr/validus/frames) for
 
 ## License
 
-Copyright (c) 2012-2014 Bob Nadler
+Copyright (c) 2012-2015 Bob Nadler
 
 MIT License
 
