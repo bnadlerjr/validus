@@ -20,6 +20,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "contest", "~> 0.1.3"
   gem.add_development_dependency "flay",    "~> 2.5.0"
   gem.add_development_dependency "flog",    "~> 4.3.0"
-  gem.add_development_dependency "rake",    "~> 10.3.2"
+  gem.add_development_dependency "rake",    "~> 10.4.2"
   gem.add_development_dependency "rdoc",    "~> 4.1.1"
 end
